@@ -1,4 +1,4 @@
-import {Bell, Grid, Search} from "lucide-react";
+import {Bell, Search} from "lucide-react";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import Image from "next/image"
@@ -20,7 +20,7 @@ export default function Header() {
                 </Button>
                 <div className="h-8 w-8 overflow-hidden rounded-full">
                     <Image
-                        src="/placeholder.svg"
+                        src="/icono-mensurarq.png"
                         alt="Avatar"
                         width={32}
                         height={32}
