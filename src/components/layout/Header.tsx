@@ -14,8 +14,22 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {supabase} from "@/lib/supabase";
+import {logout} from "@/store/slices/userSlice";
+import {useDispatch} from "react-redux";
+import {useRouter} from "next/navigation";
 
 export default function Header() {
+
+    const dispatch = useDispatch();
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        dispatch(logout());
+        router.push('/');
+    };
+
     return (
         <header className="flex items-center justify-between border-b px-6 py-4">
             <SidebarTrigger />
@@ -66,7 +80,7 @@ export default function Header() {
                             Notifications
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={() => console.log("Logout")}>
+                        <DropdownMenuItem onClick={handleLogout}>
                             <LogOut className="mr-2 h-4 w-4" />
                             Log out
                         </DropdownMenuItem>

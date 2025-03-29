@@ -30,10 +30,7 @@ export default function DashboardPage() {
 
     return (
         <main className="p-8 ">
-            <h1 className="text-2xl font-semibold mb-4">Bienvenido, {user.email}</h1>
-            <button onClick={handleLogout} className="bg-red-600 text-white px-4 py-2 rounded">
-                Cerrar sesión
-            </button>
+
         </main>
     );
 }
