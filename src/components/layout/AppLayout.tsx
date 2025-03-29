@@ -1,12 +1,13 @@
 import { AppSidebar } from "./AppSidebar";
-import {SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar";
+import {SidebarProvider} from "@/components/ui/sidebar";
+import Header from "@/components/layout/Header";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
         <SidebarProvider>
             <AppSidebar />
             <main>
-                <SidebarTrigger />
+                <Header />
                 {children}
             </main>
         </SidebarProvider>
