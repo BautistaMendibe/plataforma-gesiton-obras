@@ -4,10 +4,11 @@ import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import TablaProyectos from "@/app/proyects/TablaProyectos";
+import ProjectsTable from "@/components/projects/ProjectsTable";
 import { FiltrosDropdown } from "@/components/FiltrosDropdown";
 import { AgruparPorDropdown } from "@/components/AgruparPorDropdown";
-import { proyectosMock } from "@/app/models/Proyect.model";
+import { proyectosMock } from "@/models/Proyect.model";
+import Link from "next/link";
 
 export default function ProyectsPage() {
     const [filtroNombre, setFiltroNombre] = useState("");
@@ -29,10 +30,12 @@ export default function ProyectsPage() {
                 <h1 className="text-2xl font-bold">Proyectos</h1>
 
                 <div>
-                    <Button className="gap-2">
-                        <Plus className="h-4 w-4" />
-                        Nuevo proyecto
-                    </Button>
+                    <Link href="/projects/new">
+                        <Button className="gap-2">
+                            <Plus className="h-4 w-4" />
+                            Nuevo proyecto
+                        </Button>
+                    </Link>
                     <Button variant="outline" className="gap-2 ml-3">
                         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -61,7 +64,7 @@ export default function ProyectsPage() {
                 </div>
             </div>
 
-            <TablaProyectos proyectos={proyectosFiltrados} />
+            <ProjectsTable proyectos={proyectosFiltrados} />
         </div>
     );
 }

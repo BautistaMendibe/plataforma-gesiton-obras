@@ -1,12 +1,12 @@
 "use client";
 
-import {Proyecto} from "../models/Proyect.model";
+import {Proyecto} from "@/models/Proyect.model";
 
 type Props = {
     proyectos: Proyecto[];
 };
 
-export default function TablaProyectos({ proyectos }: Props) {
+export default function ProjectsTable({ proyectos }: Props) {
     return (proyectos.length === 0 ? (
                 <div className="p-6 text-center text-gray-500">No hay resultados.</div>
             ) : (

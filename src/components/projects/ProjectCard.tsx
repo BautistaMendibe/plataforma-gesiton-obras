@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function ProyectCard({ title, metadata, thumbnail }: { title: string; metadata: string; thumbnail: string }) {
+export default function ProjectCard({ title, metadata, thumbnail }: { title: string; metadata: string; thumbnail: string }) {
     return (
         <div className="group relative overflow-hidden rounded-lg border bg-white">
             <div className="aspect-[4/3] overflow-hidden">
