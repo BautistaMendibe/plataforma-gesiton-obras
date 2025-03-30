@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Tabs } from "@radix-ui/react-tabs";
-import {Plus} from "lucide-react";
-import {TabsList, TabsTrigger} from "@/components/ui/tabs";
-import ProyectCard from "@/components/proyects/ProyectCard";
+import {Plus, Search} from "lucide-react";
+import {Input} from "@/components/ui/input";
 
 export default function ProyectsPage() {
     return (
@@ -15,7 +13,7 @@ export default function ProyectsPage() {
                 <div>
                     <Button className="gap-2">
                         <Plus className="h-4 w-4" />
-                        Create
+                        Nuevo proyecto
                     </Button>
                     <Button variant="outline" className="gap-2 ml-3">
                         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -44,21 +42,13 @@ export default function ProyectsPage() {
                 </div>
             </div>
 
-            <div className="mb-6">
-                <Tabs defaultValue="recent">
-                    <TabsList>
-                        <TabsTrigger value="recent">Recent</TabsTrigger>
-                        <TabsTrigger value="starred">Starred</TabsTrigger>
-                        <TabsTrigger value="shared">Shared</TabsTrigger>
-                    </TabsList>
-                </Tabs>
+            <div className="w-80">
+                <div className="relative">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+                    <Input type="search" placeholder="Buscar por Id" className="pl-9" />
+                </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <ProyectCard title="Q4 Sales Deck" metadata="Shared folder • 8 presentations" thumbnail="/placeholder.svg" />
-                <ProyectCard title="Product Videos" metadata="Shared folder • 5 videos" thumbnail="/placeholder.svg" />
-                <ProyectCard title="ROI Calculator" metadata="Shared file • 1 Excel" thumbnail="/placeholder.svg" />
-            </div>
         </div>
     );
 }
