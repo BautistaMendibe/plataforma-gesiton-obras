@@ -19,7 +19,7 @@ const data = {
     versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
     navMain: [
         {
-            title: "Getting Started",
+            title: "Trabajo",
             url: "#",
             items: [
                 {
@@ -35,7 +35,7 @@ const data = {
             ],
         },
         {
-            title: "Trabajo diario",
+            title: "Gestión",
             url: "#",
             items: [
                 {

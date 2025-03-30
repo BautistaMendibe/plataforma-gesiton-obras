@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import ProyectsPage from "@/app/proyects/page";
 
 export default function DashboardPage() {
     const user = useSelector((state: RootState) => state.user.user);
@@ -21,7 +22,7 @@ export default function DashboardPage() {
 
     return (
         <main className="p-8 ">
-
+            <ProyectsPage />
         </main>
     );
 }
