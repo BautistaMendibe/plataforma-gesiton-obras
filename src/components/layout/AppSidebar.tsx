@@ -25,7 +25,7 @@ const data = {
                 {
                     icon: LayoutGridIcon,
                     title: "Proyectos",
-                    url: "#",
+                    url: "projects",
                 },
                 {
                     icon: ActivitySquareIcon,

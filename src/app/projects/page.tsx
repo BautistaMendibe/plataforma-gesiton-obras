@@ -25,7 +25,7 @@ export default function ProyectsPage() {
     }, [filtroNombre, filtroCliente, filtroTipo]);
 
     return (
-        <div>
+        <div className="p-6">
             <div className="mb-6 flex justify-between items-center gap-4">
                 <h1 className="text-2xl font-bold">Proyectos</h1>
 

@@ -80,15 +80,18 @@ export default function ProjectForm() {
     }
 
     return (
-        <Card className="max-w-2xl mx-auto">
-            <CardHeader>
-                <div className="mb-2">
+        <Card className="max-w-5xl mx-auto">
+            <CardHeader className="flex justify-between">
+                <div >
+                    <CardTitle className={"text-3xl font-bold"}>Crear Proyecto</CardTitle>
+                    <CardDescription>Completá los campos para registrar un nuevo proyecto.</CardDescription>
+                </div>
+                <div className="mt-3">
                     <Button variant="outline" size="sm" onClick={() => router.back()}>
                         ← Volver
                     </Button>
                 </div>
-                <CardTitle>Crear Proyecto</CardTitle>
-                <CardDescription>Completá los campos para registrar un nuevo proyecto.</CardDescription>
+
             </CardHeader>
             <CardContent>
                 <Form {...form}>
