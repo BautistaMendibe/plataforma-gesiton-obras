@@ -6,23 +6,29 @@ import ProyectCard from "@/components/proyects/ProyectCard";
 
 export default function ProyectsPage() {
     return (
-        <div className="p-2">
-            <div className="mb-6 flex items-center gap-4">
-                <Button className="gap-2">
-                    <Plus className="h-4 w-4" />
-                    Create
-                </Button>
-                <Button variant="outline" className="gap-2">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path
-                            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                    Upload
-                </Button>
+        <div>
+            <div className="mb-6 flex justify-between items-center gap-4">
+                <div>
+                    <h1 className="text-xl font-bold">Proyectos</h1>
+                </div>
+
+                <div>
+                    <Button className="gap-2">
+                        <Plus className="h-4 w-4" />
+                        Create
+                    </Button>
+                    <Button variant="outline" className="gap-2 ml-3">
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path
+                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                        Descargar CSV
+                    </Button>
+                    {/*
                 <Button variant="outline" className="gap-2">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path
@@ -34,7 +40,8 @@ export default function ProyectsPage() {
                     </svg>
                     Create folder
                 </Button>
-
+                 */}
+                </div>
             </div>
 
             <div className="mb-6">
