@@ -19,12 +19,6 @@ export default function DashboardPage() {
         }
     }, [user, router]);
 
-    const handleLogout = async () => {
-        await supabase.auth.signOut();
-        dispatch(logout());
-        router.push('/');
-    };
-
     // Mostrar pantalla vacía mientras redirige
     if (!user) return null;
 
