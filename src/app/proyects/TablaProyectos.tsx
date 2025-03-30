@@ -2,9 +2,10 @@
 
 import {Proyecto, proyectosMock} from "../models/Proyect.model";
 
+
 export default function TablaProyectos() {
     return (
-        <div className="rounded-md border mt-4">
+        <div className="rounded-md border mt-5">
             <table className="w-full text-sm text-left">
                 <thead className="bg-gray-50 border-b text-gray-600 uppercase text-xs">
                 <tr>

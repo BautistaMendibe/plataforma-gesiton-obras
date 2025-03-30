@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import {Plus, Search} from "lucide-react";
 import {Input} from "@/components/ui/input";
 import TablaProyectos from "@/app/proyects/TablaProyectos";
+import {FiltrosDropdown} from "@/components/FiltrosDropdown";
+import {AgruparPorDropdown} from "@/components/AgruparPorDropdown";
 
 export default function ProyectsPage() {
     return (
@@ -47,6 +49,11 @@ export default function ProyectsPage() {
                 <div className="relative">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
                     <Input type="search" placeholder="Buscar por Id" className="pl-9" />
+                </div>
+
+                <div className="flex gap-2 mb-4 pt-5">
+                    <FiltrosDropdown />
+                    <AgruparPorDropdown />
                 </div>
             </div>
 
