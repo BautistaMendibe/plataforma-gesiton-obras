@@ -133,6 +133,7 @@ export default function ProjectForm() {
                                             ))}
                                         </SelectContent>
                                     </Select>
+                                    <FormDescription>Selecciona la categoría que mejor describe este proyecto.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
