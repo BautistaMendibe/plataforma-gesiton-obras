@@ -12,7 +12,7 @@ import {
     SidebarMenuItem,
     SidebarRail,
 } from "@/components/ui/sidebar"
-import {ActivitySquareIcon, LayoutGridIcon, PersonStandingIcon, TruckIcon} from "lucide-react";
+import {ActivitySquareIcon, HomeIcon, LayoutGridIcon, PersonStandingIcon, TruckIcon} from "lucide-react";
 
 // This is sample data.
 const data = {
@@ -22,6 +22,11 @@ const data = {
             title: "Trabajo",
             url: "#",
             items: [
+                {
+                    icon: HomeIcon,
+                    title: "Inicio",
+                    url: "dashboard",
+                },
                 {
                     icon: LayoutGridIcon,
                     title: "Proyectos",
