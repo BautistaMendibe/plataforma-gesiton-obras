@@ -1,7 +1,5 @@
 import * as React from "react"
 
-import { SearchForm } from "@/components/sidebar/search-form"
-import { VersionSwitcher } from "@/components/sidebar/version-switcher"
 import {
     Sidebar,
     SidebarContent,
@@ -14,6 +12,7 @@ import {
     SidebarMenuItem,
     SidebarRail,
 } from "@/components/ui/sidebar"
+import {ActivitySquareIcon, LayoutGridIcon, PersonStandingIcon, TruckIcon} from "lucide-react";
 
 // This is sample data.
 const data = {
@@ -24,123 +23,31 @@ const data = {
             url: "#",
             items: [
                 {
-                    title: "Installation",
+                    icon: LayoutGridIcon,
+                    title: "Proyectos",
                     url: "#",
                 },
                 {
-                    title: "Project Structure",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Building Your Application",
-            url: "#",
-            items: [
-                {
-                    title: "Routing",
-                    url: "#",
-                },
-                {
-                    title: "Data Fetching",
-                    url: "#",
-                    isActive: true,
-                },
-                {
-                    title: "Rendering",
-                    url: "#",
-                },
-                {
-                    title: "Caching",
-                    url: "#",
-                },
-                {
-                    title: "Styling",
-                    url: "#",
-                },
-                {
-                    title: "Optimizing",
-                    url: "#",
-                },
-                {
-                    title: "Configuring",
-                    url: "#",
-                },
-                {
-                    title: "Testing",
-                    url: "#",
-                },
-                {
-                    title: "Authentication",
-                    url: "#",
-                },
-                {
-                    title: "Deploying",
-                    url: "#",
-                },
-                {
-                    title: "Upgrading",
-                    url: "#",
-                },
-                {
-                    title: "Examples",
+                    icon: ActivitySquareIcon,
+                    title: "Obras",
                     url: "#",
                 },
             ],
         },
         {
-            title: "API Reference",
+            title: "Trabajo diario",
             url: "#",
             items: [
                 {
-                    title: "Components",
+                    icon: TruckIcon,
+                    title: "Proveedores",
                     url: "#",
                 },
                 {
-                    title: "File Conventions",
+                    icon: PersonStandingIcon,
+                    title: "Clientes",
                     url: "#",
-                },
-                {
-                    title: "Functions",
-                    url: "#",
-                },
-                {
-                    title: "next.config.js Options",
-                    url: "#",
-                },
-                {
-                    title: "CLI",
-                    url: "#",
-                },
-                {
-                    title: "Edge Runtime",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Architecture",
-            url: "#",
-            items: [
-                {
-                    title: "Accessibility",
-                    url: "#",
-                },
-                {
-                    title: "Fast Refresh",
-                    url: "#",
-                },
-                {
-                    title: "Next.js Compiler",
-                    url: "#",
-                },
-                {
-                    title: "Supported Browsers",
-                    url: "#",
-                },
-                {
-                    title: "Turbopack",
-                    url: "#",
+                    isActive: false,
                 },
             ],
         },
@@ -150,12 +57,19 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
         <Sidebar {...props}>
+
             <SidebarHeader>
+                {/*
                 <VersionSwitcher
                     versions={data.versions}
                     defaultVersion={data.versions[0]}
                 />
+                */}
+                <div className="p-4">
+                    <h1 className="text-xl font-bold">MyObrasApp</h1>
+                </div>
             </SidebarHeader>
+
             <SidebarContent>
                 {/* We create a SidebarGroup for each parent. */}
                 {data.navMain.map((item) => (
@@ -166,7 +80,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                 {item.items.map((item) => (
                                     <SidebarMenuItem key={item.title}>
                                         <SidebarMenuButton asChild isActive={item.isActive}>
-                                            <a href={item.url}>{item.title}</a>
+                                            <a href={item.url} className="flex items-center gap-2">
+                                                <item.icon className="h-4 w-4" />
+                                                <span>{item.title}</span>
+                                            </a>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 ))}
