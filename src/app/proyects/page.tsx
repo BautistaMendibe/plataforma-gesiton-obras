@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import {Plus, Search} from "lucide-react";
 import {Input} from "@/components/ui/input";
+import TablaProyectos from "@/app/proyects/TablaProyectos";
 
 export default function ProyectsPage() {
     return (
         <div>
             <div className="mb-6 flex justify-between items-center gap-4">
                 <div>
-                    <h1 className="text-xl font-bold">Proyectos</h1>
+                    <h1 className="text-2xl font-bold">Proyectos</h1>
                 </div>
 
                 <div>
@@ -42,12 +43,14 @@ export default function ProyectsPage() {
                 </div>
             </div>
 
-            <div className="w-80">
+            <div className="w-80 mb-5">
                 <div className="relative">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
                     <Input type="search" placeholder="Buscar por Id" className="pl-9" />
                 </div>
             </div>
+
+            <TablaProyectos />
 
         </div>
     );
