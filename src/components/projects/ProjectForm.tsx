@@ -70,10 +70,10 @@ export default function ProjectForm() {
         }
 
         setTimeout(() => {
-            console.log("Proyecto creado:", proyectoConFechaCreacion)
+            console.log("Proyecto creado:", proyectoConFechaCreacion);
             toast.success("Proyecto creado", {
                 description: `${values.name} fue creado correctamente.`,
-            })
+            });
             form.reset()
             setIsSubmitting(false)
         }, 1000)

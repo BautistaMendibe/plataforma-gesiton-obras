@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ReduxProvider } from "@/providers/ReduxProvider";
 import SessionLoader from "@/components/SessionLoader";
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
     title: "Plataforma Gestión",
@@ -20,6 +21,7 @@ export default function RootLayout({
             <SessionLoader />
             {children}
         </ReduxProvider>
+        <Toaster />
         </body>
         </html>
     );
