@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 
 import {
@@ -13,6 +15,8 @@ import {
     SidebarRail,
 } from "@/components/ui/sidebar"
 import {ActivitySquareIcon, HomeIcon, LayoutGridIcon, PersonStandingIcon, TruckIcon} from "lucide-react";
+import { usePathname } from "next/navigation";
+
 
 // This is sample data.
 const data = {
@@ -25,12 +29,12 @@ const data = {
                 {
                     icon: HomeIcon,
                     title: "Inicio",
-                    url: "dashboard",
+                    url: "/dashboard",
                 },
                 {
                     icon: LayoutGridIcon,
                     title: "Proyectos",
-                    url: "projects",
+                    url: "/projects",
                 },
                 {
                     icon: ActivitySquareIcon,
@@ -60,38 +64,35 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+    const pathname = usePathname();
     return (
         <Sidebar {...props}>
-
             <SidebarHeader>
-                {/*
-                <VersionSwitcher
-                    versions={data.versions}
-                    defaultVersion={data.versions[0]}
-                />
-                */}
                 <div className="p-4">
                     <h1 className="text-xl font-bold">MyObrasApp</h1>
                 </div>
             </SidebarHeader>
 
             <SidebarContent>
-                {/* We create a SidebarGroup for each parent. */}
                 {data.navMain.map((item) => (
                     <SidebarGroup key={item.title}>
                         <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
                         <SidebarGroupContent>
                             <SidebarMenu>
-                                {item.items.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild isActive={item.isActive}>
-                                            <a href={item.url} className="flex items-center gap-2">
-                                                <item.icon className="h-4 w-4" />
-                                                <span>{item.title}</span>
-                                            </a>
-                                        </SidebarMenuButton>
-                                    </SidebarMenuItem>
-                                ))}
+                                {item.items.map((item) => {
+                                    const isActive = pathname.startsWith(item.url);
+
+                                    return (
+                                        <SidebarMenuItem key={item.title}>
+                                            <SidebarMenuButton asChild isActive={isActive}>
+                                                <a href={item.url} className="flex items-center gap-2">
+                                                    <item.icon className="h-4 w-4" />
+                                                    <span>{item.title}</span>
+                                                </a>
+                                            </SidebarMenuButton>
+                                        </SidebarMenuItem>
+                                    );
+                                })}
                             </SidebarMenu>
                         </SidebarGroupContent>
                     </SidebarGroup>
@@ -99,5 +100,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarContent>
             <SidebarRail />
         </Sidebar>
-    )
+    );
 }
